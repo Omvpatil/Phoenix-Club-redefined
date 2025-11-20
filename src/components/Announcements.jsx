@@ -9,8 +9,53 @@ const Announcements = ({ setEventId,setFeesEvent, setEvent_type }) => {
   const containerRef = useRef(null)
   const currentDate = new Date();
   isMobile && (document.body.style.overflowY = "hidden");
-  const [events, setEvents] = useState([]) // Store all events
-  const [currentEvent, setCurrentEvent] = useState({}) // Store the current event
+  const [events, setEvents] = useState([
+  {
+    "id": 1,
+    "name": "Tech Symposium 2025",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
+    "fees": 150,
+    "date": "2025-01-18T10:00:00Z",
+    "deadline": "2025-01-16T23:59:59Z",
+    "event_type": "All Students",
+    "venue": "Auditorium Block A",
+    "poster": "https://picsum.photos/600/800?random=1"
+  },
+  {
+    "id": 2,
+    "name": "Cybersecurity Workshop",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.",
+    "fees": 200,
+    "date": "2025-02-05T09:00:00Z",
+    "deadline": "2025-02-03T23:59:59Z",
+    "event_type": "CSE/IT Students",
+    "venue": "Lab 302",
+    "poster": "https://picsum.photos/600/800?random=2"
+  },
+  {
+    "id": 3,
+    "name": "UI/UX Design Challenge",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "fees": 120,
+    "date": "2025-03-11T14:00:00Z",
+    "deadline": "2025-03-09T23:59:59Z",
+    "event_type": "Open For All",
+    "venue": "Innovation Hall",
+    "poster": "https://picsum.photos/600/800?random=3"
+  }
+]
+) // Store all events
+  const [currentEvent, setCurrentEvent] = useState(  {
+    "id": 1,
+    "name": "Tech Symposium 2025",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
+    "fees": 150,
+    "date": "2025-01-18T10:00:00Z",
+    "deadline": "2025-01-16T23:59:59Z",
+    "event_type": "All Students",
+    "venue": "Auditorium Block A",
+    "poster": "https://picsum.photos/600/800?random=1"
+  }) // Store the current event
   const client = axios.create({
     baseURL: "https://phoenixkkw.pythonanywhere.com/",
     headers: {
